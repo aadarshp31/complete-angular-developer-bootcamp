@@ -8,10 +8,20 @@
     class="slider form-control-range"
     (input)="handleSlideChange($event.target.value)"
   />
-  <button class="btn btn-info" (click)="generate()">Generate Words</button>
+  <button class="btn btn-info" (click)="generate()">Get Words</button>
+  <button class="btn btn-info m-2" (click)="generateCountries()">
+    Get Countries
+  </button>
   <div *ngIf="words" class="card card-body">
+    <h5>Countries Count: <span class="text-info">{{ limit }}</span></h5>
     <p class="">
       {{ words }}
+    </p>
+  </div>
+  <div *ngIf="countries" class="card card-body my-2">
+    <h5>Countries Count: <span class="text-info">{{ countryLimit }}</span></h5>
+    <p class="">
+      {{ countries }}
     </p>
   </div>
 </div>
