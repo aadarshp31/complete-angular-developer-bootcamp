@@ -1,0 +1,23 @@
+export default [
+'United States',
+'North America',
+'China',
+'Japan',
+'Germany',
+'India',
+'France',
+'United Kingdom',
+'Italy',
+'Brazil',
+'Canada',
+'Russia',
+'Korea',
+'Spain',
+'Australia',
+'Mexico',
+'Indonesia',
+'Netherlands',
+'Turkey',
+'Saudi Arabia',
+'Switzerland'
+]
