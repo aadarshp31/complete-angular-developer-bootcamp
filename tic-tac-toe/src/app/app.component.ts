@@ -14,8 +14,25 @@ export class AppComponent {
 
   constructor(private toastr: ToastrService) {}
 
+  handleClick = (itemNumber: number) => {
+    // Check for Win message already set
+    if(this.winMessage) {
+      return this.toastr.success(this.winMessage);
+    }
+
+    // Check for empty box and changing it to cross or circle
+    if(this.itemArray[itemNumber] === 'empty'){
+      this.itemArray[itemNumber] = this.isCross ? 'cross' : 'circle';
+      this.isCross = !this.isCross;
+    } else {
+      return this.toastr.info("Box is already filled!");
+    }
+
+    // Check Winner
+    this.checkIsWinner();
+  }
+
   checkIsWinner = () => {
-    
     if(
       this.itemArray[0] === this.itemArray[1] &&
       this.itemArray[0] === this.itemArray[2] &&
@@ -65,8 +82,6 @@ export class AppComponent {
     ){
       this.winMessage = `${this.itemArray[2]} won!`
     }
-
-
   }
 
   reloadGame = () => {
