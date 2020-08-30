@@ -39,48 +39,56 @@ export class AppComponent {
       this.itemArray[0] !== 'empty'
     ){
       this.winMessage = `${this.itemArray[0]} won!`
+      this.toastr.success(this.winMessage)
     } else if(
       this.itemArray[3] === this.itemArray[4] &&
       this.itemArray[3] === this.itemArray[5] &&
       this.itemArray[3] !== 'empty'
     ){
       this.winMessage = `${this.itemArray[3]} won!`
+      this.toastr.success(this.winMessage)
     } else if(
       this.itemArray[6] === this.itemArray[7] &&
       this.itemArray[6] === this.itemArray[8] &&
       this.itemArray[6] !== 'empty'
     ){
       this.winMessage = `${this.itemArray[6]} won!`
+      this.toastr.success(this.winMessage)
     } else if(
       this.itemArray[0] === this.itemArray[3] &&
       this.itemArray[0] === this.itemArray[6] &&
       this.itemArray[0] !== 'empty'
     ){
       this.winMessage = `${this.itemArray[0]} won!`
+      this.toastr.success(this.winMessage)
     } else if(
       this.itemArray[1] === this.itemArray[4] &&
       this.itemArray[1] === this.itemArray[7] &&
       this.itemArray[1] !== 'empty'
     ){
       this.winMessage = `${this.itemArray[1]} won!`
+      this.toastr.success(this.winMessage)
     } else if(
       this.itemArray[2] === this.itemArray[5] &&
       this.itemArray[2] === this.itemArray[8] &&
       this.itemArray[2] !== 'empty'
     ){
       this.winMessage = `${this.itemArray[2]} won!`
+      this.toastr.success(this.winMessage)
     } else if(
       this.itemArray[0] === this.itemArray[4] &&
       this.itemArray[0] === this.itemArray[8] &&
       this.itemArray[0] !== 'empty'
     ){
       this.winMessage = `${this.itemArray[0]} won!`
+      this.toastr.success(this.winMessage)
     } else if(
       this.itemArray[2] === this.itemArray[4] &&
       this.itemArray[2] === this.itemArray[6] &&
       this.itemArray[2] !== 'empty'
     ){
       this.winMessage = `${this.itemArray[2]} won!`
+      this.toastr.success(this.winMessage)
     }
   }
 
