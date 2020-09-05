@@ -1,6 +1,6 @@
 export interface Todo {
   id: String;
   title: String;
-  isComplete: boolean;
+  isCompleted: boolean;
   date: Date;
 }
