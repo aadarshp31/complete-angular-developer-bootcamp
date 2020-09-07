@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
   styleUrls: ['./todo-form.component.css']
 })
 export class TodoFormComponent implements OnInit {
-  title: String;
+  todoTitle: String;
 
   constructor(private todoService: TodoService) { }
 
@@ -19,13 +19,13 @@ export class TodoFormComponent implements OnInit {
   handleAddTodo() {
     const newTodo: Todo = {
       id: uuidv4(),
-      title: this.title,
+      title: this.todoTitle,
       isCompleted: false,
       date: new Date()
     }
 
     this.todoService.addTodo(newTodo);
-    this.title = "";
+    this.todoTitle = "";
   }
 
 }
