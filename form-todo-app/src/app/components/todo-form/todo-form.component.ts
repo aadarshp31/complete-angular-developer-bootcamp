@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
   styleUrls: ['./todo-form.component.css']
 })
 export class TodoFormComponent implements OnInit {
-  todoTitle: String;
+  todoTitle: String = "";
 
   constructor(private todoService: TodoService) { }
 
@@ -23,9 +23,14 @@ export class TodoFormComponent implements OnInit {
       isCompleted: false,
       date: new Date()
     }
-
-    this.todoService.addTodo(newTodo);
-    this.todoTitle = "";
+    console.log(this.todoTitle);
+    
+    if(this.todoTitle !== ""){
+      this.todoService.addTodo(newTodo);
+      this.todoTitle = "";
+    } else {
+      alert("Todo cannot be empty!");
+    }
   }
 
 }
