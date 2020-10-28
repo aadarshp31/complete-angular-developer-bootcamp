@@ -19,13 +19,17 @@ export class AppComponent implements OnInit {
     this.signupForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
-      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
       acceptTandC: [false, Validators.requiredTrue]
     }, {
       validators: passwordChecker('password', 'confirmPassword')
     })
+  }
+
+  get h() {
+    return this.signupForm.controls;
   }
 
   onSubmit() {
