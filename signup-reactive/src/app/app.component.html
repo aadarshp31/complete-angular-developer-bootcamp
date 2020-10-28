@@ -15,8 +15,13 @@
               formControlName="firstName"
               [ngClass]="{ 'is-invalid': submitted && h.firstName.errors }"
             />
-            <div class="text-warning">
-              <div>First Name is required</div>
+            <div *ngIf="submitted && h.firstName.errors" class="text-warning">
+              <div *ngIf="h.firstName.errors.required">
+                First Name is required
+              </div>
+              <div *ngIf="h.firstName.errors.minlength">
+                First Name must be atleast 2 characters in length
+              </div>
             </div>
           </div>
           <div class="form-group col-6">
@@ -27,8 +32,13 @@
               formControlName="lastName"
               [ngClass]="{ 'is-invalid': submitted && h.lastName.errors }"
             />
-            <div class="text-warning">
-              <div>Last Name is required</div>
+            <div *ngIf="submitted && h.lastName.errors" class="text-warning">
+              <div *ngIf="h.lastName.errors.required">
+                Last Name is required
+              </div>
+              <div *ngIf="h.lastName.errors.minlength">
+                Last Name must be atleast 2 characters in length
+              </div>
             </div>
           </div>
         </div>
