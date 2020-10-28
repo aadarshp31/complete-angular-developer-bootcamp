@@ -6,7 +6,7 @@ export function passwordChecker(controlName: string, compareControlName: string)
     const confirmPassword = formGroup.controls[compareControlName]
 
     if (password.value !== confirmPassword.value) {
-      confirmPassword.setErrors({ mustMatch: true })
+      confirmPassword.setErrors({ mustmatch: true })
     } else {
       confirmPassword.setErrors(null)
     }
