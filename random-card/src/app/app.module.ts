@@ -19,7 +19,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule,
+    ToastrModule.forRoot(),
     FontAwesomeModule
   ],
   providers: [],
