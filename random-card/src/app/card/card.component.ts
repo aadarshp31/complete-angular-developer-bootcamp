@@ -35,7 +35,7 @@ export class CardComponent implements OnInit {
         this.user = user.results[0]
       },
       (error) => {
-        this.toastr.error(error, "Something went wrong")
+        this.toastr.error(error.status, "Something went wrong")
       }
     )
   }
