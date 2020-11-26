@@ -1,1 +1,31 @@
-<p>card works!</p>
+<div class="card">
+  <div class="card-body text-center">
+    <img
+      [src]="user?.picture?.large"
+      width="150"
+      height="150"
+      class="rounded-circle img-thumbnail border-secondary"
+    />
+    <div class="card-title text-primary">
+      <h1>
+        <span class="px-2">{{ user?.name?.title | titlecase }}</span>
+        <span class="px-2">{{ user?.name?.first | titlecase }}</span>
+        <span class="px-2">{{ user?.name?.last | titlecase }}</span>
+      </h1>
+    </div>
+    <div class="card-text">
+      <fa-icon [icon]="faEnvelope"></fa-icon>
+      {{ user?.email }}
+    </div>
+    <div class="card-text">
+      <fa-icon [icon]="faMapMarkedAlt"></fa-icon
+      >{{ user?.location?.street?.number }}, {{ user?.location?.city }},
+      {{ user?.location?.state }}
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-block btn-primary" (click)="getNewUser()">
+        Get New User
+      </button>
+    </div>
+  </div>
+</div>
