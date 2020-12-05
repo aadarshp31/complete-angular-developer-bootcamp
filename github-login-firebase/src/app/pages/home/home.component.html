@@ -1,1 +1,32 @@
-<p>home works!</p>
+<div class="container">
+  <form
+    (ngSubmit)="findGithubUser()"
+    class="form-inline mt-4 d-flex justify-content-center"
+  >
+    <div class="formgroup">
+      <label for="userName">UserName</label>
+      <input
+        type="text"
+        class="form-control mx-sm-3"
+        id="userName"
+        name="userName"
+        [(ngModel)]="userName"
+      />
+      <button class="btn btn-primary mb-2">Find User</button>
+    </div>
+  </form>
+
+  <!-- To render error -->
+  <div *ngIf="Error" class="alert alert-danger m-5" role="alert">
+    {{ Error }}
+  </div>
+
+  <div *ngIf="user" class="row mt-3">
+    <div class="col col-md-4">
+      <app-user-card [user]="user"></app-user-card>
+    </div>
+    <div class="col col-md-8">
+      <app-repos [repoUrl]="user.repos_url"></app-repos>
+    </div>
+  </div>
+</div>
