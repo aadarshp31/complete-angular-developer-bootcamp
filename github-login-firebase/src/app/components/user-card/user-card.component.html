@@ -1,1 +1,16 @@
-<p>user-card works!</p>
+<div class="card user-card text-light">
+  <div class="background bg-info">
+    <img
+      class="img-fluid rounded-circle profile-pic border-2 border-light"
+      [src]="user.avatar_url"
+      alt="Profile Picture"
+    />
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ user.name }}</h5>
+    <p class="card-text">Bio: {{ user.bio }}</p>
+    <p class="card-text">Company: {{ user.company }}</p>
+    <p class="card-text">Blog: {{ user.blog }}</p>
+    <p class="card-text">Updated at: {{ user.updated_at | date: "short" }}</p>
+  </div>
+</div>
