@@ -25,6 +25,15 @@ export class SignupComponent implements OnInit {
     const { email, password } = f.form.value
     // TODO: Do your validation here...
 
+    //* Angular adds 'noValdiate' by default to your form, you can create your custom validation by doing this. For readymade 'HTML VALIDATION', use 'ngNativeValidate' in the form html element
+
+    // if (!f.form.valid) {
+    //   throw this.toastr.error("Something is not right in the form", "Validation Error")
+    // }
+    // if (password.length < 6) {
+    //   throw this.toastr.error('Password must be atlease 6 characters in length', 'Validation Error')
+    // }
+
 
     this.auth.signup(email, password)
       .then(res => {
@@ -33,7 +42,7 @@ export class SignupComponent implements OnInit {
       })
       .catch(err => {
         console.error(err)
-        this.toastr.error(`Signup failed! \n${err.message}`)
+        this.toastr.error(`Signup failed: ${err.message}`)
       })
   }
 
